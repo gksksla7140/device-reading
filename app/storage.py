@@ -1,5 +1,6 @@
 from collections import defaultdict
 from .models import DeviceReadings, Reading
+from .exceptions import DeviceNotFound
 
 
 class ReadingsStorage:
@@ -29,7 +30,7 @@ class ReadingsStorage:
 
     def fetch_readings(self, device_id):
         if device_id not in self.readings_db:
-            return []
+            raise DeviceNotFound(device_id=device_id)
         
         return list(self.readings_db[device_id].values())
 

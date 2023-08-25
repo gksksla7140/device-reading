@@ -1,5 +1,4 @@
 from fastapi import APIRouter
-from fastapi import APIRouter
 from .models import DeviceReadings, FetchReadingsResponse, StoreReadingsResponse
 from .storage import readings_storage
 
