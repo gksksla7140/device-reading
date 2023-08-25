@@ -39,7 +39,7 @@ class TestAPI:
 
         fetch_response = self.client.get(f"/fetch_readings/{device_id}")
         assert fetch_response.status_code == 200
-        print(fetch_response.json())
+
         assert len(fetch_response.json()["readings"]) == 1
 
     @pytest.mark.asyncio
